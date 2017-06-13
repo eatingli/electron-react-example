@@ -16,7 +16,7 @@ const config = {
      */
     output: {
         path: path.resolve(__dirname, './app/build'),
-        filename: '[name].js'
+        filename: '[name].bundle.js'
     },
 
     /**

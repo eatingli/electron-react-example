@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "set NODE_ENV=development && webpack --config webpack.config.js --watch",
     "prod": "set NODE_ENV=production && webpack --config webpack.config.js -p",
-    "electron": "set NODE_ENV=development && electron .",
+    "start-dev": "set NODE_ENV=development && electron .",
     "start": "set NODE_ENV=production && electron ."
   },
   "dependencies": {

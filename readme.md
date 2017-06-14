@@ -2,5 +2,9 @@
 架構範例程式碼，供以後建置專案時參考。
 
 # 重點
-- 用webpack2 + babel來處理React
-- App結構採用一視窗對應一組檔案
+- 採用webpack2 + babel
+- App結構採每個視窗對應一組檔案
+
+# 開發模式
+- DevTool: Devtron, React, Redux
+- Shortcut: Exit(Esc), Toggle Devtool(Ctrl + D), Reload(Ctrl + R)

@@ -1,13 +1,14 @@
 {
   "name": "electron-reactjs-test3",
   "version": "1.0.0",
-  "main": "./app/main.js",
   "author": "Eating Li <suwako.www@gmail.com>",
   "license": "MIT",
+  "main": "./app/main.js",
   "scripts": {
-    "dev": "set NODE_ENV=dev && webpack --watch",
-    "prod": "set NODE_ENV=prod && webpack -p",
-    "electron": "electron ."
+    "dev": "set NODE_ENV=development && webpack --config webpack.config.js --watch",
+    "prod": "set NODE_ENV=production && webpack --config webpack.config.js -p",
+    "electron": "set NODE_ENV=development && electron .",
+    "start": "set NODE_ENV=production && electron ."
   },
   "dependencies": {
     "electron": "^1.6.11",
@@ -19,8 +20,10 @@
     "babel-eslint": "^7.2.3",
     "babel-loader": "^7.0.0",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
-    "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "devtron": "^1.4.0",
+    "electron-devtools-installer": "^2.2.0",
     "electron-packager": "^8.7.1",
     "webpack": "^2.6.1"
   }

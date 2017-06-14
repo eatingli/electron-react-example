@@ -5,7 +5,7 @@ const webpack = require('webpack');
 const config = {
 
     /**
-     * 每個Window會有獨立的JS檔
+     * 每個Window也有獨立的JS檔
      */
     entry: {
         main_window: ['./app/src/main_window/index.jsx']
@@ -21,21 +21,12 @@ const config = {
 
     /**
      * 引用Loader。以正規表達式來選擇特定檔案，並指明loader
+     * 此.jsx? 代表.js 或者 .jsx
      */
     module: {
         rules: [
             {
                 test: /\.jsx?$/,
-                exclude: /node_modules/,
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        cacheDirectory: true
-                    }
-                }
-            },
-            {
-                test: /\.js?$/,
                 exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader',

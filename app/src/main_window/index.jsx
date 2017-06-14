@@ -1,10 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import App from './containers/App.jsx'
 
-const App = (props) => (
-    <h1>Hello, {props.name}</h1>
-);
 
 ReactDOM.render(
     (

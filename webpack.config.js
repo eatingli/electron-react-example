@@ -42,6 +42,7 @@ const config = {
      * 排外的 Modules
      */
     externals: {
+        "electron": "require('electron')",
     },
 
     /**

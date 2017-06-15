@@ -49,8 +49,6 @@ const config = {
      * 
      */
     plugins: [
-        // new webpack.ExternalsPlugin('commonjs', ['fs']),
-        // new webpack.IgnorePlugin(/vertx/)
     ]
 };
 

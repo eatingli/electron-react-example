@@ -1,8 +1,6 @@
-const electron = require('electron')
-
-const app = electron.app
-const globalShortcut = electron.globalShortcut
-const BrowserWindow = electron.BrowserWindow
+const Electron = require('electron')
+const { app, globalShortcut, BrowserWindow } = Electron
+const DEV_MODE = process.env.NODE_ENV && process.env.NODE_ENV.trim() === 'development';
 
 const path = require('path')
 const url = require('url')
@@ -64,7 +62,7 @@ function createWindow() {
     // Create the browser window.
     mainWindow = new BrowserWindow({ width: 1000, height: 700 })
 
-    // and load the index.html of the app.
+    // Load app index page.
     mainWindow.loadURL(url.format({
         pathname: path.join(__dirname, './main_window.html'),
         protocol: 'file:',
@@ -72,11 +70,16 @@ function createWindow() {
     }))
 
     // Open the DevTools.
+    // Open the DevTools.
+    if (DEV_MODE) {
+        mainWindow.webContents.openDevTools()
+    }
     mainWindow.webContents.openDevTools()
 
     // Emitted when the window is closed.
     mainWindow.on('closed', function () {
         mainWindow = null
+        app.quit()
     })
 }
 
@@ -86,7 +89,7 @@ function createWindow() {
 app.on('ready', () => {
 
     // Development option
-    if (process.env.NODE_ENV.trim() === 'development') {
+    if (DEV_MODE) {
         devShortcut();
         devTool();
         console.log('Development Mode');
@@ -98,7 +101,7 @@ app.on('ready', () => {
 })
 
 /**
- * 
+ * Cencel short before quit
  */
 app.on('will-quit', function () {
     globalShortcut.unregisterAll()
